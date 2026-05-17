@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# PyTorch checkpoints (large, use external storage)
+checkpoints/
+*.pt
+*.pth
+
+# Local data / scratch
+*.npy
+*.npz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Plan / personal notes (not part of the repo)
+*.log.bak

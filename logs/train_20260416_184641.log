@@ -1,0 +1,80 @@
+======================================================================
+CSDI+TimeGrad Hybrid Reproduction
+Device: cuda   |   smoke=False
+n_seeds=20  T=2000  epochs=100  bs=128
+======================================================================
+
+[1/6] Generating 20 seeds x T=2000 days...
+      generated 20 series, each of shape (2000, 10)
+      elapsed: 0.0s
+
+[2/6] Split: train=16, val=2, test=2
+      train=30736 windows, val=3842, test=3842
+      batches/epoch: 240
+
+[3/6] Model: ConditionalDenoiserV2, 445,665 params
+      Schedule: quadratic beta, N=50, ab_N=3.35e-05
+
+[4/6] Training 100 epochs...
+Epoch   1/100  loss=0.43584  val_loss=0.39683  |grad|=0.31  lr=1.0e-03
+Epoch   5/100  loss=0.38673  val_loss=0.39025  |grad|=0.14  lr=1.0e-03
+Epoch  10/100  loss=0.38657  val_loss=0.38020  |grad|=0.08  lr=1.0e-03
+Epoch  15/100  loss=0.38693  val_loss=0.39743  |grad|=0.08  lr=1.0e-03
+Epoch  20/100  loss=0.38819  val_loss=0.39701  |grad|=0.07  lr=1.0e-03
+             [diag] target |mean|=0.816 forecast std=1.003 |mean|=0.798
+             val_CRPS=0.7646  val_CRPS_sum=0.7626
+             saved checkpoint: g:/project3/checkpoints\ckpt_epoch0020.pt
+Epoch  25/100  loss=0.38559  val_loss=0.38489  |grad|=0.06  lr=1.0e-03
+Epoch  30/100  loss=0.38904  val_loss=0.37977  |grad|=0.06  lr=1.0e-03
+Epoch  35/100  loss=0.38978  val_loss=0.39188  |grad|=0.05  lr=1.0e-03
+Epoch  40/100  loss=0.38756  val_loss=0.38108  |grad|=0.06  lr=1.0e-03
+             [diag] target |mean|=0.816 forecast std=1.009 |mean|=0.802
+             val_CRPS=0.7650  val_CRPS_sum=0.7624
+             saved checkpoint: g:/project3/checkpoints\ckpt_epoch0040.pt
+Epoch  45/100  loss=0.38937  val_loss=0.38582  |grad|=0.06  lr=1.0e-03
+Epoch  50/100  loss=0.38730  val_loss=0.38686  |grad|=0.05  lr=1.0e-03
+Epoch  55/100  loss=0.38954  val_loss=0.39517  |grad|=0.05  lr=1.0e-03
+Epoch  60/100  loss=0.38544  val_loss=0.39386  |grad|=0.06  lr=1.0e-03
+             [diag] target |mean|=0.816 forecast std=1.012 |mean|=0.804
+             val_CRPS=0.7648  val_CRPS_sum=0.7621
+             saved checkpoint: g:/project3/checkpoints\ckpt_epoch0060.pt
+Epoch  65/100  loss=0.38675  val_loss=0.39984  |grad|=0.06  lr=1.0e-03
+Epoch  70/100  loss=0.38438  val_loss=0.39708  |grad|=0.05  lr=1.0e-03
+Epoch  75/100  loss=0.38602  val_loss=0.39768  |grad|=0.06  lr=1.0e-04
+Epoch  80/100  loss=0.38446  val_loss=0.40120  |grad|=0.04  lr=1.0e-04
+             [diag] target |mean|=0.816 forecast std=1.010 |mean|=0.804
+             val_CRPS=0.7654  val_CRPS_sum=0.7629
+             saved checkpoint: g:/project3/checkpoints\ckpt_epoch0080.pt
+Epoch  85/100  loss=0.38575  val_loss=0.38578  |grad|=0.04  lr=1.0e-04
+Epoch  90/100  loss=0.38489  val_loss=0.39888  |grad|=0.04  lr=1.0e-05
+Epoch  95/100  loss=0.38192  val_loss=0.39038  |grad|=0.04  lr=1.0e-05
+Epoch 100/100  loss=0.38240  val_loss=0.40633  |grad|=0.04  lr=1.0e-05
+             [diag] target |mean|=0.816 forecast std=1.013 |mean|=0.807
+             val_CRPS=0.7658  val_CRPS_sum=0.7618
+             saved checkpoint: g:/project3/checkpoints\ckpt_epoch0100.pt
+
+[5/6] Final evaluation on test set...
+             [diag] target |mean|=0.812 forecast std=1.017 |mean|=0.810
+      DDPM-50  CRPS=0.7679  CRPS_sum=0.7711
+             [diag] target |mean|=0.812 forecast std=0.879 |mean|=0.696
+      DDIM-10  CRPS=0.7698  CRPS_sum=0.7722
+
+[6/6] Generating visualizations...
+      saved ./training_vs_validation.png
+      saved ./crps_curve.png
+      saved ./sample_actual_vs_gen_00.png
+      saved ./sample_actual_vs_gen_01.png
+      saved ./sample_actual_vs_gen_02.png
+      saved ./sample_actual_vs_gen_03.png
+      saved ./sample_actual_vs_gen_04.png
+      saved ./sample_actual_vs_gen_05.png
+      saved ./sample_actual_vs_gen_06.png
+      saved ./sample_actual_vs_gen_07.png
+      saved ./sample_actual_vs_gen_08.png
+      saved ./sample_actual_vs_gen_09.png
+
+======================================================================
+Total elapsed: 11680.9s
+FINAL CRPS  ¡ª DDPM-50: 0.7679, DDIM-10: 0.7698
+FINAL CRPS_sum ¡ª DDPM-50: 0.7711, DDIM-10: 0.7722
+======================================================================
